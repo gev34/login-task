@@ -26,9 +26,10 @@ const Login = () => {
                     setEmailPass({...emailPass ,
                     [e.target.name] : e.target.value})
                 }}/>
+                
                 <Button 
                     text = "Log In"
-                    disabled = {false}
+                    disabled = {Object.keys(emailPass).length > 1 ? false : true}
                     onClick = {(e) => {
                         e.preventDefault();
                         isValidUser();
